@@ -10,3 +10,6 @@ langchain-community
 chromadb
 
 pypdf
+
+pytest
+httpx
