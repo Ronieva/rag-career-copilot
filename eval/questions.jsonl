@@ -1,0 +1,15 @@
+{"id":"q1","question":"Summarize the main responsibilities of this role in 5 concise bullet points."}
+{"id":"q2","question":"Separate the requirements into MUST-HAVE and NICE-TO-HAVE skills."}
+{"id":"q3","question":"List all explicitly mentioned programming languages."}
+{"id":"q4","question":"What data technologies or tools are mentioned (databases, orchestration, cloud, etc.)?"}
+{"id":"q5","question":"Does the role involve production systems, monitoring, or SLAs?"}
+{"id":"q6","question":"What cloud provider is mentioned, if any?"}
+{"id":"q7","question":"Is there any mention of team collaboration or cross-functional work?"}
+{"id":"q8","question":"What experience level is required (years or seniority)?"}
+{"id":"q9","question":"Are there any domain-specific requirements (finance, health, e-commerce, etc.)?"}
+{"id":"q10","question":"Extract the key business goals of the position if described."}
+{"id":"q11","question":"What are the main data pipeline components described?"}
+{"id":"q12","question":"Does the job description mention CI/CD, testing, or DevOps practices?"}
+{"id":"q13","question":"What KPIs or metrics are explicitly mentioned?"}
+{"id":"q14","question":"Is there any mention of machine learning or AI components?"}
+{"id":"q15","question":"What stakeholder groups are referenced (if any)?"}
