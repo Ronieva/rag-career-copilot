@@ -1,27 +1,32 @@
 import logging
 import uuid
 from typing import Dict, Any, Optional
+from pathlib import Path
+import json
 
 from fastapi import FastAPI, UploadFile, File, Request, Form
 from fastapi.responses import JSONResponse
 from fastapi.responses import RedirectResponse
 from fastapi.exceptions import RequestValidationError
+from fastapi import HTTPException
 
 from app.core.logging import setup_logging, get_request_id
 from app.core.errors import AppError, ErrorResponse
 from app.rag.ingest import ingest_pdf, ingest_text
 from app.services.match_service import match
-from app.services.match_service import rank_jobs_against_cv
+from app.services.rank_service import rank_jobs_against_cv
 from app.services.rewrite_service import rewrite_bullets
 from app.schemas.requests import MatchRequest, RewriteRequest
 from app.schemas.responses import MatchResponse, RewriteResponse
+
+from app.rag.ingest import ingest_text
 
 setup_logging()
 logger = logging.getLogger("app")
 
 app = FastAPI(title="RAG Career Copilot")
 
-
+JSON_SAMPLES_DIR = Path("sample_data/json")
 # -----------------------------
 # Middleware: request_id + access logs
 # -----------------------------
@@ -140,6 +145,97 @@ async def upload_text(request: TextIngestRequest):
 
     return {"status": "ok", "doc_id": doc_id, "chunks": chunks}
 
+@app.post("/ingest/samples/json")
+async def ingest_sample_json_folder() -> Dict[str, Any]:
+    """
+    Dev endpoint: ingest all JSON payloads from sample_data/json/*.json
+    Each JSON must contain at least:
+      - text (str)
+      - doc_type (str)  -> "job" or "cv"
+      - source (str)
+    Optional:
+      - company (str)
+      - role (str)
+    """
+    if not JSON_SAMPLES_DIR.exists():
+        raise HTTPException(
+            status_code=400,
+            detail=f"Folder not found: {JSON_SAMPLES_DIR.resolve()}",
+        )
+
+    files = sorted(JSON_SAMPLES_DIR.glob("*.json"))
+    if not files:
+        raise HTTPException(
+            status_code=400,
+            detail=f"No .json files found in: {JSON_SAMPLES_DIR.resolve()}",
+        )
+
+    results: List[Dict[str, Any]] = []
+    ingested = 0
+    failed = 0
+
+    for fp in files:
+        try:
+            raw = fp.read_text(encoding="utf-8", errors="replace")
+            payload = json.loads(raw)
+
+            # Accept either a single object or a list of objects in a file
+            payloads = payload if isinstance(payload, list) else [payload]
+
+            for idx, item in enumerate(payloads):
+                if not isinstance(item, dict):
+                    raise ValueError("JSON item is not an object")
+
+                text = item.get("text")
+                doc_type = item.get("doc_type")
+                source = item.get("source") or fp.name
+                company = item.get("company")
+                role = item.get("role")
+
+                if not isinstance(text, str) or not text.strip():
+                    raise ValueError("Missing/invalid 'text'")
+                if not isinstance(doc_type, str) or not doc_type.strip():
+                    raise ValueError("Missing/invalid 'doc_type'")
+
+                doc_id, chunks = ingest_text(
+                    text=text,
+                    source=str(source),
+                    doc_type=doc_type,
+                    company=company,
+                    role=role,
+                )
+
+                results.append(
+                    {
+                        "file": fp.name,
+                        "index": idx,
+                        "status": "ok",
+                        "doc_type": doc_type,
+                        "company": company or "",
+                        "role": role or "",
+                        "source": source,
+                        "doc_id": doc_id,
+                        "chunks": chunks,
+                    }
+                )
+                ingested += 1
+
+        except Exception as e:
+            results.append(
+                {
+                    "file": fp.name,
+                    "status": "error",
+                    "error": str(e),
+                }
+            )
+            failed += 1
+
+    return {
+        "status": "ok",
+        "ingested": ingested,
+        "failed": failed,
+        "results": results,
+    }
 
 @app.post("/match", response_model=MatchResponse)
 async def match_endpoint(request: MatchRequest):
@@ -148,8 +244,8 @@ async def match_endpoint(request: MatchRequest):
 class RankRequest(BaseModel):
     cv_id: str
 
-@app.post("/rank_jobs")
-async def rank_jobs(request: RankRequest):
+@app.post("/rank-jobs")
+async def rank_jobs(request: RankJobsRequest):
     rankings = rank_jobs_against_cv(request.cv_id)
     return {"rankings": rankings}
     
