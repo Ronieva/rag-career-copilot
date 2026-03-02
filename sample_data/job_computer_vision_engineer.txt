@@ -1,0 +1,26 @@
+Company: VisionTech Robotics
+Role: Computer Vision Engineer
+Location: Barcelona, Spain
+
+About the Role:
+We are building real-time vision systems for industrial inspection.
+
+Responsibilities:
+- Develop object detection models.
+- Process video streams in real time.
+- Implement image segmentation algorithms.
+- Optimize inference performance.
+- Test and validate models.
+
+Required Skills:
+- Python.
+- OpenCV.
+- PyTorch or TensorFlow.
+- Image processing techniques.
+- Linear algebra.
+
+Nice to Have:
+- YOLO.
+- GPU optimization.
+- Embedded deployment.
+- C++.
