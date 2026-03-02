@@ -1,0 +1,26 @@
+Company: DataSphere Global
+Role: Cloud Data Architect
+Location: Remote (Europe)
+
+About the Role:
+We are seeking a Cloud Data Architect to design scalable data platforms.
+
+Responsibilities:
+- Design cloud-based data architectures.
+- Define data governance standards.
+- Lead data modeling initiatives.
+- Oversee ETL and ELT pipelines.
+- Collaborate with engineering teams.
+
+Required Skills:
+- AWS or GCP.
+- Data warehousing.
+- Data modeling.
+- SQL.
+- Infrastructure as Code.
+
+Nice to Have:
+- dbt.
+- Spark.
+- BigQuery.
+- Leadership experience.
