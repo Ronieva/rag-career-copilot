@@ -1,0 +1,25 @@
+Company: MechaDesign Solutions
+Role: Mechanical Engineer
+Location: Seville, Spain
+
+About the Role:
+We are looking for a Mechanical Engineer to design mechanical systems and components for industrial equipment.
+
+Responsibilities:
+- Design mechanical components using CAD software.
+- Perform stress analysis.
+- Develop mechanical prototypes.
+- Collaborate with electrical and control teams.
+- Conduct failure analysis and testing.
+
+Required Skills:
+- SolidWorks or CATIA.
+- Finite Element Analysis (FEA).
+- Mechanical design principles.
+- Materials engineering knowledge.
+- Technical documentation skills.
+
+Nice to Have:
+- Experience with ANSYS.
+- Project management.
+- Manufacturing processes knowledge.
