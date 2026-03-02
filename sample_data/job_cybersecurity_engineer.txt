@@ -1,0 +1,26 @@
+Company: SecureNet Labs
+Role: Cybersecurity Engineer
+Location: Madrid, Spain
+
+About the Role:
+We are looking for a Cybersecurity Engineer to secure enterprise systems and applications.
+
+Responsibilities:
+- Conduct vulnerability assessments.
+- Monitor network traffic.
+- Implement security policies.
+- Perform penetration testing.
+- Ensure compliance with security standards.
+
+Required Skills:
+- Network security fundamentals.
+- Penetration testing tools.
+- Firewalls and IDS/IPS systems.
+- Cryptography basics.
+- Risk assessment.
+
+Nice to Have:
+- Ethical hacking certification.
+- Python scripting.
+- Cloud security knowledge.
+- SIEM tools.
