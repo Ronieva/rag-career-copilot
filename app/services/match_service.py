@@ -44,22 +44,34 @@ def match(job_id: str, cv_id: str) -> Dict[str, Any]:
     }
 
     def rank_jobs_against_cv(cv_id: str):
+    """
+    Rank all job descriptions against a given CV
+    and return company + role instead of raw job_id.
+    """
+
     from app.rag.vectorstore import vectorstore
-    # Get all documents
+
     results = vectorstore.get()
-    # Filter unique job doc_ids
-    job_ids = set()
+
+    jobs_metadata = {}
+
     for meta in results["metadatas"]:
         if meta.get("doc_type") == "job":
-            job_ids.add(meta.get("doc_id"))
+            job_id = meta.get("doc_id")
+            if job_id not in jobs_metadata:
+                jobs_metadata[job_id] = {
+                    "company": meta.get("company"),
+                    "role": meta.get("role")
+                }
 
     rankings = []
 
-    for job_id in job_ids:
+    for job_id, info in jobs_metadata.items():
         match_result = match_job_and_cv(job_id=job_id, cv_id=cv_id)
 
         rankings.append({
-            "job_id": job_id,
+            "company": info["company"],
+            "role": info["role"],
             "match_score": match_result["match_score"]
         })
 
