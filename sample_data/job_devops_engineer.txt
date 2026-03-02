@@ -1,0 +1,26 @@
+Company: CloudForge Systems
+Role: DevOps Engineer
+Location: Remote (EU)
+
+About the Role:
+We are looking for a DevOps Engineer to manage CI/CD pipelines and cloud infrastructure.
+
+Responsibilities:
+- Design and maintain CI/CD pipelines.
+- Manage cloud infrastructure using Infrastructure as Code.
+- Monitor system performance and reliability.
+- Implement containerized deployments.
+- Improve system scalability.
+
+Required Skills:
+- Docker.
+- Kubernetes.
+- Terraform.
+- AWS or GCP.
+- CI/CD tools (GitHub Actions or GitLab CI).
+
+Nice to Have:
+- Python scripting.
+- Prometheus and Grafana.
+- Linux administration.
+- Networking fundamentals.
