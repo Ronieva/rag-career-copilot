@@ -8,7 +8,7 @@ from fastapi.exceptions import RequestValidationError
 
 from app.core.logging import setup_logging, get_request_id
 from app.core.errors import AppError, ErrorResponse
-from app.rag.ingest import ingest_pdf
+from app.rag.ingest import ingest_pdf, ingest_text
 from app.services.match_service import match
 from app.services.rewrite_service import rewrite_bullets
 from app.schemas.requests import MatchRequest, RewriteRequest
@@ -109,6 +109,27 @@ async def upload_pdf(
         doc_type=doc_type,
         company=company,
         role=role,
+    )
+
+    return {"status": "ok", "doc_id": doc_id, "chunks": chunks}
+
+from pydantic import BaseModel
+
+class TextIngestRequest(BaseModel):
+    text: str
+    doc_type: str
+    company: str | None = None
+    role: str | None = None
+    source: str
+
+@app.post("/ingest/text")
+async def upload_text(request: TextIngestRequest):
+    doc_id, chunks = ingest_text(
+        text=request.text,
+        source=request.source,
+        doc_type=request.doc_type,
+        company=request.company,
+        role=request.role,
     )
 
     return {"status": "ok", "doc_id": doc_id, "chunks": chunks}
