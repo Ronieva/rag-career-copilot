@@ -4,6 +4,7 @@ from typing import Dict, Any, Optional
 
 from fastapi import FastAPI, UploadFile, File, Request, Form
 from fastapi.responses import JSONResponse
+from fastapi.responses import RedirectResponse
 from fastapi.exceptions import RequestValidationError
 
 from app.core.logging import setup_logging, get_request_id
@@ -84,6 +85,10 @@ async def unhandled_error_handler(request: Request, exc: Exception):
 # -----------------------------
 # Endpoints
 # -----------------------------
+@app.get("/")
+async def root():
+    return RedirectResponse(url="/docs")
+
 @app.get("/health")
 async def health():
     return {"status": "ok"}
