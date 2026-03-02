@@ -148,7 +148,7 @@ async def match_endpoint(request: MatchRequest):
 class RankRequest(BaseModel):
     cv_id: str
 
-@app.post("/rank-jobs")
+@app.post("/rank_jobs")
 async def rank_jobs(request: RankRequest):
     rankings = rank_jobs_against_cv(request.cv_id)
     return {"rankings": rankings}
