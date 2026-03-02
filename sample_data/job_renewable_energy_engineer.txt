@@ -1,0 +1,26 @@
+Company: GreenVolt Energy
+Role: Renewable Energy Engineer
+Location: Remote (EU)
+
+About the Role:
+We are developing renewable energy solutions focused on solar and wind systems.
+
+Responsibilities:
+- Design renewable energy systems.
+- Perform energy yield simulations.
+- Evaluate system performance.
+- Analyze energy production data.
+- Ensure regulatory compliance.
+
+Required Skills:
+- Power systems engineering.
+- Energy modeling software.
+- Electrical fundamentals.
+- Data analysis.
+- Technical reporting.
+
+Nice to Have:
+- MATLAB.
+- SCADA systems.
+- Grid integration knowledge.
+- Sustainability standards.
