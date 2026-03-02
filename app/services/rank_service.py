@@ -44,7 +44,7 @@ def rank_jobs_against_cv(cv_id: str) -> List[Dict[str, Any]]:
     rankings: List[Dict[str, Any]] = []
 
     for job_id, info in jobs.items():
-        result = match_job_and_cv(job_id=job_id, cv_id=cv_id)
+        result = match(job_id=job_id, cv_id=cv_id)
 
         rankings.append(
             {
