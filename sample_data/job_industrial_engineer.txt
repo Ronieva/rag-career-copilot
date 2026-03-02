@@ -1,0 +1,26 @@
+Company: SmartFactory Solutions
+Role: Industrial Engineer
+Location: Bilbao, Spain
+
+About the Role:
+We are improving manufacturing efficiency through process optimization.
+
+Responsibilities:
+- Analyze production workflows.
+- Identify bottlenecks.
+- Implement lean methodologies.
+- Develop performance metrics.
+- Coordinate cross-functional teams.
+
+Required Skills:
+- Process optimization.
+- Lean manufacturing.
+- Data analysis.
+- KPI tracking.
+- Project management.
+
+Nice to Have:
+- Six Sigma.
+- Python for analytics.
+- ERP systems.
+- Supply chain knowledge.
