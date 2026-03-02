@@ -11,6 +11,7 @@ from app.core.logging import setup_logging, get_request_id
 from app.core.errors import AppError, ErrorResponse
 from app.rag.ingest import ingest_pdf, ingest_text
 from app.services.match_service import match
+from app.services.match_service import rank_jobs_against_cv
 from app.services.rewrite_service import rewrite_bullets
 from app.schemas.requests import MatchRequest, RewriteRequest
 from app.schemas.responses import MatchResponse, RewriteResponse
@@ -144,7 +145,14 @@ async def upload_text(request: TextIngestRequest):
 async def match_endpoint(request: MatchRequest):
     return match(request.job_id, request.cv_id)
 
+class RankRequest(BaseModel):
+    cv_id: str
 
+@app.post("/rank-jobs")
+async def rank_jobs(request: RankRequest):
+    rankings = rank_jobs_against_cv(request.cv_id)
+    return {"rankings": rankings}
+    
 @app.post("/rewrite-bullets", response_model=RewriteResponse)
 async def rewrite_endpoint(request: RewriteRequest):
     return rewrite_bullets(request.job_id, request.cv_id, request.bullets)
