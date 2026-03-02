@@ -1,0 +1,26 @@
+Company: DataFlow Systems
+Role: Big Data Engineer
+Location: Remote
+
+About the Role:
+We are building large-scale data processing systems.
+
+Responsibilities:
+- Develop distributed data processing pipelines.
+- Maintain Spark clusters.
+- Optimize big data workloads.
+- Implement streaming architectures.
+- Ensure data reliability and scalability.
+
+Required Skills:
+- Apache Spark.
+- Python or Scala.
+- Hadoop ecosystem.
+- SQL.
+- Distributed systems fundamentals.
+
+Nice to Have:
+- Kafka.
+- Airflow.
+- AWS EMR.
+- Data lake architectures.
