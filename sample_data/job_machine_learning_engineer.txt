@@ -1,0 +1,26 @@
+Company: VisionAI Labs
+Role: Machine Learning Engineer
+Location: Madrid, Spain
+
+About the Role:
+We are seeking a Machine Learning Engineer to deploy and maintain AI models in production environments.
+
+Responsibilities:
+- Develop machine learning models using Python.
+- Train and evaluate deep learning models.
+- Deploy models using FastAPI.
+- Optimize model inference performance.
+- Work closely with data engineers.
+
+Required Skills:
+- Python.
+- TensorFlow or PyTorch.
+- Scikit-learn.
+- Model evaluation techniques.
+- Experience deploying APIs.
+
+Nice to Have:
+- MLOps experience.
+- Docker and Kubernetes.
+- Cloud experience (AWS, GCP, Azure).
+- Computer Vision knowledge.
