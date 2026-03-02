@@ -1,0 +1,26 @@
+Company: InfraCore Technologies
+Role: Systems Engineer
+Location: Seville, Spain
+
+About the Role:
+We are seeking a Systems Engineer to design and maintain enterprise IT infrastructure.
+
+Responsibilities:
+- Configure and manage servers.
+- Monitor system performance.
+- Implement backup strategies.
+- Ensure network security.
+- Troubleshoot infrastructure issues.
+
+Required Skills:
+- Linux administration.
+- Networking fundamentals.
+- Virtualization technologies.
+- System monitoring tools.
+- Scripting (Bash or Python).
+
+Nice to Have:
+- Cloud platforms.
+- Docker.
+- Automation tools.
+- Cybersecurity fundamentals.
