@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Dict, List, Any
 
 from app.rag.vectorstore import vectorstore
-from app.services.match_service import match_job_and_cv
+from app.services.match_service import match
 
 
 def rank_jobs_against_cv(cv_id: str) -> List[Dict[str, Any]]:
