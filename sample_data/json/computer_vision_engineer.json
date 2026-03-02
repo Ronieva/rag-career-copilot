@@ -1,0 +1,7 @@
+{
+  "text": "Company: VisionTech Robotics\nRole: Computer Vision Engineer\nLocation: Barcelona, Spain\n\nAbout the Role:\nWe are building real-time vision systems for industrial inspection.\n\nResponsibilities:\n- Develop object detection models.\n- Process video streams in real time.\n- Implement image segmentation algorithms.\n- Optimize inference performance.\n- Test and validate models.\n\nRequired Skills:\n- Python.\n- OpenCV.\n- PyTorch or TensorFlow.\n- Image processing techniques.\n- Linear algebra.\n\nNice to Have:\n- YOLO.\n- GPU optimization.\n- Embedded deployment.\n- C++.",
+  "doc_type": "job",
+  "company": "VisionTech Robotics",
+  "role": "Computer Vision Engineer",
+  "source": "job_computer_vision_engineer.txt"
+}
