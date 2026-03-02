@@ -1,0 +1,26 @@
+Company: UXFlow Technologies
+Role: Frontend Engineer
+Location: Remote
+
+About the Role:
+We are seeking a Frontend Engineer to develop responsive web applications.
+
+Responsibilities:
+- Build modern UI components.
+- Integrate APIs.
+- Optimize web performance.
+- Maintain design consistency.
+- Implement state management.
+
+Required Skills:
+- JavaScript.
+- React or Vue.
+- HTML and CSS.
+- REST API integration.
+- Version control with Git.
+
+Nice to Have:
+- TypeScript.
+- Next.js.
+- UX/UI principles.
+- Testing frameworks (Jest).
