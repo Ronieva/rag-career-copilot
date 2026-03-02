@@ -1,0 +1,7 @@
+{
+  "text": "Company: VisionAI Labs\nRole: Machine Learning Engineer\nLocation: Madrid, Spain\n\nAbout the Role:\nWe are seeking a Machine Learning Engineer to deploy and maintain AI models in production environments.\n\nResponsibilities:\n- Develop machine learning models using Python.\n- Train and evaluate deep learning models.\n- Deploy models using FastAPI.\n- Optimize model inference performance.\n- Work closely with data engineers.\n\nRequired Skills:\n- Python.\n- TensorFlow or PyTorch.\n- Scikit-learn.\n- Model evaluation techniques.\n- Experience deploying APIs.\n\nNice to Have:\n- MLOps experience.\n- Docker and Kubernetes.\n- Cloud experience (AWS, GCP, Azure).\n- Computer Vision knowledge.",
+  "doc_type": "job",
+  "company": "VisionAI Labs",
+  "role": "Machine Learning Engineer",
+  "source": "job_ml_engineer.txt"
+}
