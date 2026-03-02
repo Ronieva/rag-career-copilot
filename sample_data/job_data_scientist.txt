@@ -1,0 +1,26 @@
+Company: InsightMetrics
+Role: Data Scientist
+Location: Remote (Spain)
+
+About the Role:
+We are looking for a Data Scientist to develop predictive models and extract insights from structured and unstructured data.
+
+Responsibilities:
+- Build predictive models using machine learning techniques.
+- Perform exploratory data analysis.
+- Develop feature engineering pipelines.
+- Communicate findings to stakeholders.
+- Deploy models in collaboration with engineering teams.
+
+Required Skills:
+- Python.
+- Pandas and NumPy.
+- Scikit-learn.
+- Statistics and probability.
+- Data visualization tools.
+
+Nice to Have:
+- SQL.
+- Deep learning.
+- Tableau or Power BI.
+- Cloud experience.
