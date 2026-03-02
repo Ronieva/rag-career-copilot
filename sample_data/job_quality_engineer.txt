@@ -1,0 +1,26 @@
+Company: PrecisionWorks
+Role: Quality Engineer
+Location: Valencia, Spain
+
+About the Role:
+We are improving product quality and reliability in manufacturing environments.
+
+Responsibilities:
+- Conduct quality audits.
+- Analyze production defects.
+- Develop quality control procedures.
+- Collaborate with engineering teams.
+- Implement continuous improvement strategies.
+
+Required Skills:
+- Quality management systems.
+- Root cause analysis.
+- Statistical process control.
+- Technical documentation.
+- Process improvement methodologies.
+
+Nice to Have:
+- Six Sigma certification.
+- Data analysis tools.
+- Lean manufacturing.
+- Project coordination.
