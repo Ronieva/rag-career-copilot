@@ -1,0 +1,26 @@
+Company: MicroCore Devices
+Role: Embedded Systems Engineer
+Location: Valencia, Spain
+
+About the Role:
+We are developing embedded firmware for IoT devices.
+
+Responsibilities:
+- Develop firmware in C.
+- Interface with sensors and actuators.
+- Debug hardware-level issues.
+- Optimize memory usage.
+- Perform real-time testing.
+
+Required Skills:
+- Embedded C.
+- Microcontrollers (STM32 or Arduino).
+- UART, SPI, I2C protocols.
+- Real-time systems.
+- Hardware debugging tools.
+
+Nice to Have:
+- RTOS.
+- Python scripting.
+- PCB design knowledge.
+- IoT communication protocols.
