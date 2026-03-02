@@ -1,0 +1,7 @@
+{
+  "text": "Company: DataFlow Systems\nRole: Big Data Engineer\nLocation: Remote\n\nAbout the Role:\nWe are building large-scale data processing systems.\n\nResponsibilities:\n- Develop distributed data processing pipelines.\n- Maintain Spark clusters.\n- Optimize big data workloads.\n- Implement streaming architectures.\n- Ensure data reliability and scalability.\n\nRequired Skills:\n- Apache Spark.\n- Python or Scala.\n- Hadoop ecosystem.\n- SQL.\n- Distributed systems fundamentals.\n\nNice to Have:\n- Kafka.\n- Airflow.\n- AWS EMR.\n- Data lake architectures.",
+  "doc_type": "job",
+  "company": "DataFlow Systems",
+  "role": "Big Data Engineer",
+  "source": "job_big_data_engineer.txt"
+}
