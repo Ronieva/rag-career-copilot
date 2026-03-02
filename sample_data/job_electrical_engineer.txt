@@ -1,0 +1,25 @@
+Company: ElectroGrid Systems
+Role: Electrical Engineer
+Location: Valencia, Spain
+
+About the Role:
+We are hiring an Electrical Engineer to design and test electrical systems for industrial applications.
+
+Responsibilities:
+- Design electrical schematics.
+- Develop PCB layouts.
+- Perform circuit simulations.
+- Ensure compliance with safety regulations.
+- Troubleshoot electrical systems.
+
+Required Skills:
+- Electrical circuit design.
+- PCB design tools.
+- MATLAB or LTspice.
+- Power electronics fundamentals.
+- Signal processing basics.
+
+Nice to Have:
+- Embedded C programming.
+- PLC systems.
+- Renewable energy systems knowledge.
