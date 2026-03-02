@@ -1,0 +1,26 @@
+Company: SmartAI Solutions
+Role: AI Engineer
+Location: Madrid, Spain
+
+About the Role:
+We are developing AI-powered solutions for enterprise automation.
+
+Responsibilities:
+- Integrate AI models into production systems.
+- Optimize inference pipelines.
+- Work with APIs and microservices.
+- Develop data preprocessing pipelines.
+- Collaborate with product teams.
+
+Required Skills:
+- Python.
+- REST APIs.
+- Machine learning fundamentals.
+- Docker.
+- Git.
+
+Nice to Have:
+- Large Language Models.
+- LangChain.
+- Kubernetes.
+- MLOps practices.
