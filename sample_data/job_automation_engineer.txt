@@ -1,0 +1,26 @@
+Company: AutoControl Tech
+Role: Automation and Control Engineer
+Location: Remote (Spain)
+
+About the Role:
+We are developing advanced automation systems for smart manufacturing.
+
+Responsibilities:
+- Design and tune PID controllers.
+- Implement PLC-based automation systems.
+- Develop SCADA monitoring systems.
+- Integrate sensors and industrial networks.
+- Optimize control system stability.
+
+Required Skills:
+- Control systems theory.
+- PLC programming (Siemens or Allen-Bradley).
+- SCADA systems.
+- PID tuning.
+- Industrial communication protocols.
+
+Nice to Have:
+- Python scripting.
+- MATLAB/Simulink.
+- OPC-UA.
+- Industrial IoT knowledge.
