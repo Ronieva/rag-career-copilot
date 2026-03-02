@@ -1,0 +1,26 @@
+Company: Nexa Analytics
+Role: Data Engineer
+Location: Remote (EU)
+
+About the Role:
+We are looking for a Data Engineer to design and maintain scalable data pipelines supporting analytics and machine learning teams.
+
+Responsibilities:
+- Design and implement batch and streaming data pipelines.
+- Develop ETL/ELT processes using Python and SQL.
+- Maintain data warehouses in BigQuery.
+- Monitor data quality and pipeline reliability.
+- Collaborate with data scientists and analysts.
+
+Required Skills:
+- Strong Python programming skills.
+- Advanced SQL.
+- Experience with Airflow.
+- Experience with cloud platforms (GCP or AWS).
+- Understanding of data modeling.
+
+Nice to Have:
+- Experience with dbt.
+- Docker knowledge.
+- Terraform.
+- CI/CD pipelines.
