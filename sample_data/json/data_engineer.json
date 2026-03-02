@@ -1,0 +1,7 @@
+{
+  "text": "Company: Nexa Analytics\nRole: Data Engineer\nLocation: Remote (EU)\n\nAbout the Role:\nWe are looking for a Data Engineer to design and maintain scalable data pipelines supporting analytics and machine learning teams.\n\nResponsibilities:\n- Design and implement batch and streaming data pipelines.\n- Develop ETL/ELT processes using Python and SQL.\n- Maintain data warehouses in BigQuery.\n- Monitor data quality and pipeline reliability.\n- Collaborate with data scientists and analysts.\n\nRequired Skills:\n- Strong Python programming skills.\n- Advanced SQL.\n- Experience with Airflow.\n- Experience with cloud platforms (GCP or AWS).\n- Understanding of data modeling.\n\nNice to Have:\n- Experience with dbt.\n- Docker knowledge.\n- Terraform.\n- CI/CD pipelines.",
+  "doc_type": "job",
+  "company": "Nexa Analytics",
+  "role": "Data Engineer",
+  "source": "job_data_engineer.txt"
+}
