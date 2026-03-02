@@ -145,29 +145,47 @@ async def upload_text(request: TextIngestRequest):
 
     return {"status": "ok", "doc_id": doc_id, "chunks": chunks}
 
+@app.post("/match", response_model=MatchResponse)
+async def match_endpoint(request: MatchRequest):
+    return match(request.job_id, request.cv_id)
+
+class RankRequest(BaseModel):
+    cv_id: str
+
+@app.post("/rank-jobs")
+async def rank_jobs(request: RankJobsRequest):
+    rankings = rank_jobs_against_cv(request.cv_id)
+    return {"rankings": rankings}
+    
+@app.post("/rewrite-bullets", response_model=RewriteResponse)
+async def rewrite_endpoint(request: RewriteRequest):
+    return rewrite_bullets(request.job_id, request.cv_id, request.bullets)
+
+# --- DEV: ingest all JSON samples from sample_data/json ---
+from pathlib import Path
+import json
+from typing import Any, Dict, List
+from fastapi import HTTPException
+
+from app.rag.ingest import ingest_text
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+JSON_SAMPLES_DIR = BASE_DIR / "sample_data" / "json"
+
+
 @app.post("/ingest/samples/json")
-async def ingest_sample_json_folder() -> Dict[str, Any]:
-    """
-    Dev endpoint: ingest all JSON payloads from sample_data/json/*.json
-    Each JSON must contain at least:
-      - text (str)
-      - doc_type (str)  -> "job" or "cv"
-      - source (str)
-    Optional:
-      - company (str)
-      - role (str)
-    """
+async def ingest_samples_json() -> Dict[str, Any]:
     if not JSON_SAMPLES_DIR.exists():
         raise HTTPException(
             status_code=400,
-            detail=f"Folder not found: {JSON_SAMPLES_DIR.resolve()}",
+            detail=f"Folder not found: {JSON_SAMPLES_DIR}",
         )
 
     files = sorted(JSON_SAMPLES_DIR.glob("*.json"))
     if not files:
         raise HTTPException(
             status_code=400,
-            detail=f"No .json files found in: {JSON_SAMPLES_DIR.resolve()}",
+            detail=f"No .json files found in: {JSON_SAMPLES_DIR}",
         )
 
     results: List[Dict[str, Any]] = []
@@ -176,13 +194,12 @@ async def ingest_sample_json_folder() -> Dict[str, Any]:
 
     for fp in files:
         try:
-            raw = fp.read_text(encoding="utf-8", errors="replace")
-            payload = json.loads(raw)
+            payload = json.loads(fp.read_text(encoding="utf-8", errors="replace"))
 
-            # Accept either a single object or a list of objects in a file
-            payloads = payload if isinstance(payload, list) else [payload]
+            # allow file to contain either a single object or a list of objects
+            items = payload if isinstance(payload, list) else [payload]
 
-            for idx, item in enumerate(payloads):
+            for idx, item in enumerate(items):
                 if not isinstance(item, dict):
                     raise ValueError("JSON item is not an object")
 
@@ -221,34 +238,7 @@ async def ingest_sample_json_folder() -> Dict[str, Any]:
                 ingested += 1
 
         except Exception as e:
-            results.append(
-                {
-                    "file": fp.name,
-                    "status": "error",
-                    "error": str(e),
-                }
-            )
+            results.append({"file": fp.name, "status": "error", "error": str(e)})
             failed += 1
 
-    return {
-        "status": "ok",
-        "ingested": ingested,
-        "failed": failed,
-        "results": results,
-    }
-
-@app.post("/match", response_model=MatchResponse)
-async def match_endpoint(request: MatchRequest):
-    return match(request.job_id, request.cv_id)
-
-class RankRequest(BaseModel):
-    cv_id: str
-
-@app.post("/rank-jobs")
-async def rank_jobs(request: RankJobsRequest):
-    rankings = rank_jobs_against_cv(request.cv_id)
-    return {"rankings": rankings}
-    
-@app.post("/rewrite-bullets", response_model=RewriteResponse)
-async def rewrite_endpoint(request: RewriteRequest):
-    return rewrite_bullets(request.job_id, request.cv_id, request.bullets)
+    return {"status": "ok", "ingested": ingested, "failed": failed, "results": results}
