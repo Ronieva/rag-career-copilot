@@ -42,3 +42,27 @@ def match(job_id: str, cv_id: str) -> Dict[str, Any]:
         "cv_skills": sorted(list(cv_skills)),
         "missing_required_skills": sorted(list(required - cv_skills)),
     }
+
+    def rank_jobs_against_cv(cv_id: str):
+    from app.rag.vectorstore import vectorstore
+    # Get all documents
+    results = vectorstore.get()
+    # Filter unique job doc_ids
+    job_ids = set()
+    for meta in results["metadatas"]:
+        if meta.get("doc_type") == "job":
+            job_ids.add(meta.get("doc_id"))
+
+    rankings = []
+
+    for job_id in job_ids:
+        match_result = match_job_and_cv(job_id=job_id, cv_id=cv_id)
+
+        rankings.append({
+            "job_id": job_id,
+            "match_score": match_result["match_score"]
+        })
+
+    rankings = sorted(rankings, key=lambda x: x["match_score"], reverse=True)
+
+    return rankings
