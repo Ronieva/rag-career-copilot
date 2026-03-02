@@ -51,3 +51,34 @@ def ingest_pdf(
     vectorstore.persist()
 
     return doc_id, len(chunks)
+def ingest_text(
+    text: str,
+    source: str,
+    doc_type: str = "job",
+    company: str | None = None,
+    role: str | None = None,
+):
+    """
+    Ingest raw text instead of PDF.
+    """
+
+    from langchain_core.documents import Document
+
+    doc_id = str(uuid.uuid4())
+
+    base_meta = {
+        "doc_id": doc_id,
+        "doc_type": doc_type,
+        "company": company or "",
+        "role": role or "",
+        "source": source,
+    }
+
+    document = Document(page_content=text, metadata=base_meta)
+
+    chunks = split_documents([document], base_meta)
+
+    vectorstore.add_documents(chunks)
+    vectorstore.persist()
+
+    return doc_id, len(chunks)
