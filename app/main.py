@@ -21,6 +21,7 @@ from app.schemas.responses import MatchResponse, RewriteResponse
 
 from app.rag.ingest import ingest_text
 
+print("LOADED app/main.py ✅")
 setup_logging()
 logger = logging.getLogger("app")
 
