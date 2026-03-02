@@ -1,0 +1,26 @@
+Company: DeepThink AI
+Role: AI Research Engineer
+Location: Remote
+
+About the Role:
+We are conducting research in generative AI and reinforcement learning.
+
+Responsibilities:
+- Develop research prototypes.
+- Train deep learning models.
+- Implement reinforcement learning algorithms.
+- Publish technical reports.
+- Optimize training performance.
+
+Required Skills:
+- Python.
+- PyTorch.
+- Deep learning.
+- Linear algebra.
+- Research methodology.
+
+Nice to Have:
+- Transformers.
+- Large Language Models.
+- Distributed training.
+- Academic publications.
