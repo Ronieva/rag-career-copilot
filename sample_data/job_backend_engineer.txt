@@ -1,0 +1,26 @@
+Company: FinTech Nova
+Role: Backend Engineer
+Location: Barcelona, Spain
+
+About the Role:
+We are hiring a Backend Engineer to build scalable APIs and backend services.
+
+Responsibilities:
+- Develop RESTful APIs.
+- Design database schemas.
+- Implement authentication systems.
+- Optimize backend performance.
+- Write unit and integration tests.
+
+Required Skills:
+- Python or Java.
+- FastAPI or Spring Boot.
+- SQL and relational databases.
+- Git.
+- Software architecture principles.
+
+Nice to Have:
+- Microservices architecture.
+- Docker.
+- Cloud deployment.
+- Redis.
