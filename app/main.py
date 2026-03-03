@@ -154,7 +154,7 @@ class RankRequest(BaseModel):
     cv_id: str
 
 @app.post("/rank-jobs")
-async def rank_jobs(request: RankJobsRequest):
+async def rank_jobs(request: RankRequest):
     rankings = rank_jobs_against_cv(request.cv_id)
     return {"rankings": rankings}
     
