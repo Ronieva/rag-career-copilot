@@ -72,9 +72,9 @@ pip install -r requirements.txt
 2. Create a `.env` file:
 
 ```
-OPENAI_API_KEY=your_key_here
-OPENAI_MODEL=gpt-4.1-mini
-OPENAI_EMBED_MODEL=text-embedding-3-small
+OPENAI_API_KEY="your_key_here"
+OPENAI_MODEL="gpt-4.1-mini"
+OPENAI_EMBED_MODEL="text-embedding-3-small"
 ```
 
 3. Start the server:
